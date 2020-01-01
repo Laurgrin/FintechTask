@@ -11,18 +11,23 @@ class ObjectManager
     /**
      * @var array
      */
-    protected $diConfig;
+    protected static $diConfig;
     
     /**
      * @var array
      */
-    protected $servicesConfig;
+    protected static $servicesConfig;
+    
+    /**
+     * @var bool
+     */
+    protected static $initialized = false;
     
     /**
      * ObjectManager constructor.
      * @throws \Source\Exception\FileNotFoundException
      */
-    public function __construct()
+    protected static function init()
     {
         if (!file_exists(DI_PATH)) {
             throw new FileNotFoundException("The DI config file was not found under " . DI_PATH);
@@ -31,9 +36,9 @@ class ObjectManager
         if (!file_exists(SERVICES_PATH)) {
             throw new FileNotFoundException("The services config file was not found under " . SERVICES_PATH);
         }
-        
-        $this->diConfig       = json_decode(file_get_contents(DI_PATH), true);
-        $this->servicesConfig = json_decode(file_get_contents(SERVICES_PATH), true);
+    
+        ObjectManager::$diConfig       = json_decode(file_get_contents(DI_PATH), true);
+        ObjectManager::$servicesConfig = json_decode(file_get_contents(SERVICES_PATH), true);
     }
     
     /**
@@ -44,15 +49,20 @@ class ObjectManager
      * @return mixed
      * @throws \Source\Exception\DefinitionNotFoundException
      * @throws \ReflectionException
+     * @throws \Source\Exception\FileNotFoundException
      */
-    public function build(string $service)
+    public static function build(string $service)
     {
-        if (!array_key_exists($service, $this->servicesConfig)) {
+        if (!ObjectManager::$initialized) {
+            ObjectManager::init();
+        }
+        
+        if (!array_key_exists($service, ObjectManager::$servicesConfig)) {
             throw new DefinitionNotFoundException("Service $service not defined in " . SERVICES_PATH);
         }
         
-        $fqn = $this->servicesConfig[$service];
-        return $this->create($fqn);
+        $fqn = ObjectManager::$servicesConfig[$service];
+        return ObjectManager::create($fqn);
     }
     
     /**
@@ -65,14 +75,14 @@ class ObjectManager
      * @throws \ReflectionException
      * @throws \Source\Exception\DefinitionNotFoundException
      */
-    protected function create(string $fqn)
+    protected static function create(string $fqn)
     {
-        $implementationFqn = $this->getImplementationClassName($fqn);
-        $constructorArgumentTypes = $this->getConstructorArgumentTypes($implementationFqn);
+        $implementationFqn = ObjectManager::getImplementationClassName($fqn);
+        $constructorArgumentTypes = ObjectManager::getConstructorArgumentTypes($implementationFqn);
         $constructorArguments = [];
         if (!empty($constructorArgumentTypes)) {
             foreach ($constructorArgumentTypes as $constructorArgumentType) {
-                $constructorArguments[] = $this->create($constructorArgumentType);
+                $constructorArguments[] = ObjectManager::create($constructorArgumentType);
             }
             
             return new $implementationFqn(...$constructorArguments);
@@ -89,13 +99,13 @@ class ObjectManager
      * @return string
      * @throws \Source\Exception\DefinitionNotFoundException
      */
-    protected function getImplementationClassName(string $fqn): string
+    protected static function getImplementationClassName(string $fqn): string
     {
-        if (!array_key_exists($fqn, $this->diConfig)) {
+        if (!array_key_exists($fqn, ObjectManager::$diConfig)) {
             throw new DefinitionNotFoundException("Implementation for $fqn not set in " . DI_PATH);
         }
         
-        return $this->diConfig[$fqn];
+        return ObjectManager::$diConfig[$fqn];
     }
     
     
@@ -107,7 +117,7 @@ class ObjectManager
      * @return array
      * @throws \ReflectionException
      */
-    protected function getConstructorArgumentTypes(string $fqn): array
+    protected static function getConstructorArgumentTypes(string $fqn): array
     {
         $argumentTypes = [];
         
@@ -120,4 +130,11 @@ class ObjectManager
         
         return $argumentTypes;
     }
+    
+    /**
+     * Left as a stub, we don't create this object directly.
+     *
+     * ObjectManager constructor.
+     */
+    protected function __construct() { }
 }
