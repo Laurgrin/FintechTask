@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="38da5ce6-8040-442c-93d1-37264d0cd00a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ObjectManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ObjectManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Service/Math.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/di.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/di.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/services.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/objects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Model/Currency/CurrencyInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Model/User/UserInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/User/UserInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ObjectManager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Parser/OperationParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/OperationParser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,40 +31,25 @@
           <provider selected="true" editor-type-id="csv-text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            <state relative-caret-position="51">
+              <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="442">
+              <caret line="44" column="95" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
               <folding>
-                <element signature="e#132#335#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/User/UserInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-              <folding>
-                <element signature="e#37#81#0#PHP" expanded="true" />
-                <element signature="e#67#128#0#PHP" expanded="true" />
-                <element signature="e#179#302#0#PHP" expanded="true" />
-                <element signature="e#374#436#0#PHP" expanded="true" />
-                <element signature="e#489#611#0#PHP" expanded="true" />
-                <element signature="e#857#1050#0#PHP" expanded="true" />
-                <element signature="e#1130#1351#0#PHP" expanded="true" />
+                <element signature="e#33#76#0#PHP" expanded="true" />
+                <element signature="e#195#453#0#PHP" expanded="true" />
+                <element signature="e#895#1019#0#PHP" expanded="true" />
+                <element signature="e#1045#1180#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,42 +58,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="68" column="46" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+            <state relative-caret-position="476">
+              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
               <folding>
-                <element signature="e#195#324#0#PHP" expanded="true" />
-                <element signature="e#397#466#0#PHP" expanded="true" />
-                <element signature="e#515#644#0#PHP" expanded="true" />
-                <element signature="e#1045#1118#0#PHP" expanded="true" />
-                <element signature="e#1171#1307#0#PHP" expanded="true" />
-                <element signature="e#1258#1380#0#PHP" expanded="true" />
+                <element signature="e#366#440#0#PHP" expanded="true" />
+                <element signature="e#493#626#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/Currency/CurrencyInterface.php">
+        <entry file="file://$PROJECT_DIR$/Source/Model/User/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="271">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
-                <element signature="e#205#315#0#PHP" expanded="true" />
-                <element signature="e#372#447#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/ObjectManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-              <folding>
-                <element signature="e#26#46#0#PHP" expanded="true" />
-                <element signature="e#316#344#0#PHP" expanded="true" />
-                <element signature="e#3838#3952#0#PHP" expanded="true" />
+                <element signature="e#127#157#0#PHP" expanded="true" />
+                <element signature="e#190#220#0#PHP" expanded="true" />
+                <element signature="e#322#382#0#PHP" expanded="true" />
+                <element signature="e#301#423#0#PHP" expanded="true" />
+                <element signature="e#553#614#0#PHP" expanded="true" />
+                <element signature="e#727#848#0#PHP" expanded="true" />
+                <element signature="e#980#1173#0#PHP" expanded="true" />
+                <element signature="e#1314#1537#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,17 +114,22 @@
         <option value="$PROJECT_DIR$/Source/Exception/DiFileNotFoundException.php" />
         <option value="$PROJECT_DIR$/Source/Exception/DiDefinitionNotFoundException.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/Config/di.json" />
-        <option value="$PROJECT_DIR$/Source/Parser/OperationParser.php" />
         <option value="$PROJECT_DIR$/Config/services.json" />
         <option value="$PROJECT_DIR$/Source/Model/OperationInterface.php" />
         <option value="$PROJECT_DIR$/Source/Model/UserInterface.php" />
         <option value="$PROJECT_DIR$/Source/Model/CurrencyInterface.php" />
         <option value="$PROJECT_DIR$/Source/Model/Currency/CurrencyInterface.php" />
-        <option value="$PROJECT_DIR$/Source/Model/User/UserInterface.php" />
-        <option value="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" />
         <option value="$PROJECT_DIR$/Source/ObjectManager.php" />
+        <option value="$PROJECT_DIR$/Source/ServiceFactory.php" />
+        <option value="$PROJECT_DIR$/Source/Model/User/User.php" />
+        <option value="$PROJECT_DIR$/Source/Model/User/UserInterface.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Config/objects.json" />
+        <option value="$PROJECT_DIR$/Config/di.json" />
+        <option value="$PROJECT_DIR$/Source/ObjectFactory.php" />
+        <option value="$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php" />
+        <option value="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" />
+        <option value="$PROJECT_DIR$/Source/Parser/OperationParser.php" />
       </list>
     </option>
   </component>
@@ -243,7 +235,7 @@
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="Source" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Currency" type="462c0819:PsiDirectoryNode" />
+              <item name="Money" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -315,12 +307,12 @@
       <updated>1577783137787</updated>
       <workItem from="1577783141587" duration="2556000" />
       <workItem from="1577786241538" duration="1384000" />
-      <workItem from="1577885882295" duration="11000000" />
+      <workItem from="1577885882295" duration="15949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14940000" />
+    <option name="totallyTimeSpent" value="19889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -339,7 +331,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -431,17 +423,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Config/di.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="77" lean-forward="true" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Config/services.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -456,45 +442,32 @@
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
+    <entry file="file://$PROJECT_DIR$/Config/objects.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config/di.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#132#335#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="68" column="46" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
-          <folding>
-            <element signature="e#195#324#0#PHP" expanded="true" />
-            <element signature="e#397#466#0#PHP" expanded="true" />
-            <element signature="e#515#644#0#PHP" expanded="true" />
-            <element signature="e#1045#1118#0#PHP" expanded="true" />
-            <element signature="e#1171#1307#0#PHP" expanded="true" />
-            <element signature="e#1258#1380#0#PHP" expanded="true" />
-          </folding>
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/Model/User/UserInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="101">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
-            <element signature="e#37#81#0#PHP" expanded="true" />
             <element signature="e#67#128#0#PHP" expanded="true" />
             <element signature="e#179#302#0#PHP" expanded="true" />
             <element signature="e#374#436#0#PHP" expanded="true" />
@@ -505,33 +478,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Model/Currency/CurrencyInterface.php">
+    <entry file="file://$PROJECT_DIR$/Source/Model/User/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+        <state relative-caret-position="271">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
-            <element signature="e#205#315#0#PHP" expanded="true" />
-            <element signature="e#372#447#0#PHP" expanded="true" />
+            <element signature="e#127#157#0#PHP" expanded="true" />
+            <element signature="e#190#220#0#PHP" expanded="true" />
+            <element signature="e#322#382#0#PHP" expanded="true" />
+            <element signature="e#301#423#0#PHP" expanded="true" />
+            <element signature="e#553#614#0#PHP" expanded="true" />
+            <element signature="e#727#848#0#PHP" expanded="true" />
+            <element signature="e#980#1173#0#PHP" expanded="true" />
+            <element signature="e#1314#1537#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/ObjectManager.php">
+    <entry file="file://$PROJECT_DIR$/Source/ObjectFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        <state relative-caret-position="410">
+          <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
           <folding>
             <element signature="e#26#46#0#PHP" expanded="true" />
             <element signature="e#316#344#0#PHP" expanded="true" />
-            <element signature="e#3838#3952#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        <state relative-caret-position="476">
+          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding>
+            <element signature="e#366#440#0#PHP" expanded="true" />
+            <element signature="e#493#626#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="44" column="95" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
+          <folding>
+            <element signature="e#33#76#0#PHP" expanded="true" />
+            <element signature="e#195#453#0#PHP" expanded="true" />
+            <element signature="e#895#1019#0#PHP" expanded="true" />
+            <element signature="e#1045#1180#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

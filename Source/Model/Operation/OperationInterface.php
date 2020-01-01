@@ -2,7 +2,7 @@
 
 namespace Source\Model\Operation;
 
-use Source\Model\Currency\CurrencyInterface;
+use Source\Model\Money\MoneyInterface;
 
 interface OperationInterface
 {
@@ -45,32 +45,32 @@ interface OperationInterface
     /**
      * Get operation's currency.
      *
-     * @return \Source\Model\Currency\CurrencyInterface
+     * @return \Source\Model\Money\MoneyInterface
      */
-    public function getCurrency(): CurrencyInterface;
+    public function getMoney(): MoneyInterface;
     
     /**
      * Set operation's currency
      *
-     * @param \Source\Model\Currency\CurrencyInterface $currency
+     * @param \Source\Model\Money\MoneyInterface $money
      *
      * @return \Source\Model\Operation\OperationInterface
      */
-    public function setCurrency(CurrencyInterface $currency): OperationInterface;
+    public function setMoney(MoneyInterface $money): OperationInterface;
     
     /**
      * Gets the operation's commission amount.
      *
-     * @return \Source\Model\Currency\CurrencyInterface
+     * @return \Source\Model\Money\MoneyInterface
      */
-    public function getCommissionAmount(): CurrencyInterface;
+    public function getCommissionAmount(): MoneyInterface;
     
     /**
      * Sets the operation's commission amount.
      *
-     * @param \Source\Model\Currency\CurrencyInterface $currency
+     * @param \Source\Model\Money\MoneyInterface $money
      *
      * @return \Source\Model\Operation\OperationInterface
      */
-    public function setCommissionAmount(CurrencyInterface $currency): OperationInterface;
+    public function setCommissionAmount(MoneyInterface $money): OperationInterface;
 }

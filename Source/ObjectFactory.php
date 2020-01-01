@@ -6,7 +6,7 @@ use ReflectionClass;
 use Source\Exception\DefinitionNotFoundException;
 use Source\Exception\FileNotFoundException;
 
-class ObjectManager
+class ObjectFactory
 {
     /**
      * @var array
@@ -24,7 +24,7 @@ class ObjectManager
     protected static $initialized = false;
     
     /**
-     * ObjectManager constructor.
+     * ObjectFactory constructor.
      * @throws \Source\Exception\FileNotFoundException
      */
     protected static function init()
@@ -33,36 +33,36 @@ class ObjectManager
             throw new FileNotFoundException("The DI config file was not found under " . DI_PATH);
         }
         
-        if (!file_exists(SERVICES_PATH)) {
-            throw new FileNotFoundException("The services config file was not found under " . SERVICES_PATH);
+        if (!file_exists(OBJECTS_PATH)) {
+            throw new FileNotFoundException("The services config file was not found under " . OBJECTS_PATH);
         }
     
-        ObjectManager::$diConfig       = json_decode(file_get_contents(DI_PATH), true);
-        ObjectManager::$servicesConfig = json_decode(file_get_contents(SERVICES_PATH), true);
+        ObjectFactory::$diConfig       = json_decode(file_get_contents(DI_PATH), true);
+        ObjectFactory::$servicesConfig = json_decode(file_get_contents(OBJECTS_PATH), true);
     }
     
     /**
-     * Returns an instance of the requested class, as defined in services.json
+     * Returns an instance of the requested class, as defined in objects.json
      *
-     * @param string $service
+     * @param string $object
      *
      * @return mixed
      * @throws \Source\Exception\DefinitionNotFoundException
      * @throws \ReflectionException
      * @throws \Source\Exception\FileNotFoundException
      */
-    public static function build(string $service)
+    public static function build(string $object)
     {
-        if (!ObjectManager::$initialized) {
-            ObjectManager::init();
+        if (!ObjectFactory::$initialized) {
+            ObjectFactory::init();
         }
         
-        if (!array_key_exists($service, ObjectManager::$servicesConfig)) {
-            throw new DefinitionNotFoundException("Service $service not defined in " . SERVICES_PATH);
+        if (!array_key_exists($object, ObjectFactory::$servicesConfig)) {
+            throw new DefinitionNotFoundException("Service $object not defined in " . OBJECTS_PATH);
         }
         
-        $fqn = ObjectManager::$servicesConfig[$service];
-        return ObjectManager::create($fqn);
+        $fqn = ObjectFactory::$servicesConfig[$object];
+        return ObjectFactory::create($fqn);
     }
     
     /**
@@ -77,12 +77,12 @@ class ObjectManager
      */
     protected static function create(string $fqn)
     {
-        $implementationFqn = ObjectManager::getImplementationClassName($fqn);
-        $constructorArgumentTypes = ObjectManager::getConstructorArgumentTypes($implementationFqn);
+        $implementationFqn = ObjectFactory::getImplementationClassName($fqn);
+        $constructorArgumentTypes = ObjectFactory::getConstructorArgumentTypes($implementationFqn);
         $constructorArguments = [];
         if (!empty($constructorArgumentTypes)) {
             foreach ($constructorArgumentTypes as $constructorArgumentType) {
-                $constructorArguments[] = ObjectManager::create($constructorArgumentType);
+                $constructorArguments[] = ObjectFactory::create($constructorArgumentType);
             }
             
             return new $implementationFqn(...$constructorArguments);
@@ -101,11 +101,11 @@ class ObjectManager
      */
     protected static function getImplementationClassName(string $fqn): string
     {
-        if (!array_key_exists($fqn, ObjectManager::$diConfig)) {
+        if (!array_key_exists($fqn, ObjectFactory::$diConfig)) {
             throw new DefinitionNotFoundException("Implementation for $fqn not set in " . DI_PATH);
         }
         
-        return ObjectManager::$diConfig[$fqn];
+        return ObjectFactory::$diConfig[$fqn];
     }
     
     
@@ -134,7 +134,7 @@ class ObjectManager
     /**
      * Left as a stub, we don't create this object directly.
      *
-     * ObjectManager constructor.
+     * ObjectFactory constructor.
      */
     protected function __construct() { }
 }

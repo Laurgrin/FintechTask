@@ -1,4 +1,7 @@
 {
   "Source\\Parser\\OperationParserInterface": "Source\\Parser\\OperationParser",
-  "Source\\Parser\\Output\\OutputInterface": "Source\\Parser\\Output\\Output"
+  "Source\\Parser\\Output\\OutputInterface": "Source\\Parser\\Output\\Output",
+  "Source\\Model\\User\\UserInterface": "Source\\Model\\User\\User",
+  "Source\\Model\\Operation\\OperationInterface": "Source\\Model\\Operation\\Operation",
+  "Source\\Model\\Money\\MoneyInterface": "Source\\Model\\Money\\Money"
 }

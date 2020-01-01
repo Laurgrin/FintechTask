@@ -1,10 +1,11 @@
 <?php
-define("DI_PATH", __DIR__ . "/Config/di.json");
-define("SERVICES_PATH", __DIR__ . "/Config/services.json");
+define("ROOT_PATH", realpath(__DIR__));
+define("DI_PATH", ROOT_PATH . "/Config/di.json");
+define("OBJECTS_PATH", ROOT_PATH . "/Config/objects.json");
 
 require_once(__DIR__ . "/vendor/autoload.php");
 try {
-    $object = \Source\ObjectManager::build("parser");
+    $object = \Source\ObjectFactory::build("parser");
 } catch (\Source\Exception\FileNotFoundException $e) {
     die($e->getMessage());
 } catch (ReflectionException $e) {

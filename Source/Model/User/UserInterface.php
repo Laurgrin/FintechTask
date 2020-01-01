@@ -2,7 +2,6 @@
 
 namespace Source\Model\User;
 
-use Source\Model\Currency\CurrencyInterface;
 use Source\Model\Operation\OperationInterface;
 
 interface UserInterface

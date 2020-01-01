@@ -1,8 +1,8 @@
 <?php
 
-namespace Source\Model\Currency;
+namespace Source\Model\Money;
 
-interface CurrencyInterface
+interface MoneyInterface
 {
     /**
      * Returns the amount of currency.
@@ -16,23 +16,23 @@ interface CurrencyInterface
      *
      * @param string $amount
      *
-     * @return mixed
+     * @return \Source\Model\Money\MoneyInterface
      */
-    public function setAmount(string $amount);
+    public function setAmount(string $amount): MoneyInterface;
     
     /**
      * Returns the currency type.
      *
      * @return string
      */
-    public function getType(): string;
+    public function getCurrency(): string;
     
     /**
      * Sets the currency type.
      *
      * @param string $type
      *
-     * @return \Source\Model\Currency\CurrencyInterface
+     * @return \Source\Model\Money\MoneyInterface
      */
-    public function setType(string $type): CurrencyInterface;
+    public function setCurrency(string $type): MoneyInterface;
 }
