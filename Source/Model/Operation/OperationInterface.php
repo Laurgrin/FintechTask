@@ -7,7 +7,7 @@ use Source\Model\Money\MoneyInterface;
 interface OperationInterface
 {
     const OPERATION_TYPE_IN  = "cash_in";
-    const OPERATION_TYPE_OUT = "cast_out";
+    const OPERATION_TYPE_OUT = "cash_out";
     const DATE_FORMAT        = "Y-m-d";
     
     /**
@@ -43,14 +43,14 @@ interface OperationInterface
     public function setType(string $type): OperationInterface;
     
     /**
-     * Get operation's currency.
+     * Get operation's money object.
      *
      * @return \Source\Model\Money\MoneyInterface
      */
     public function getMoney(): MoneyInterface;
     
     /**
-     * Set operation's currency
+     * Set operation's money object
      *
      * @param \Source\Model\Money\MoneyInterface $money
      *
@@ -59,18 +59,25 @@ interface OperationInterface
     public function setMoney(MoneyInterface $money): OperationInterface;
     
     /**
-     * Gets the operation's commission amount.
+     * Get the operation's remaining weekly cash out discount.
      *
      * @return \Source\Model\Money\MoneyInterface
      */
-    public function getCommissionAmount(): MoneyInterface;
+    public function getWeeklyCashOutDiscount(): MoneyInterface;
     
     /**
-     * Sets the operation's commission amount.
+     * Set the operation's remaining weekly cash out discount.
      *
      * @param \Source\Model\Money\MoneyInterface $money
      *
      * @return \Source\Model\Operation\OperationInterface
      */
-    public function setCommissionAmount(MoneyInterface $money): OperationInterface;
+    public function setWeeklyCashOutDiscount(MoneyInterface $money): OperationInterface;
+    
+    /**
+     * Returns the number of the week in year of the operation (set by setDate).
+     *
+     * @return int
+     */
+    public function getWeekNumber(): int;
 }

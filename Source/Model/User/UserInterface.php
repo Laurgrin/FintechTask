@@ -55,7 +55,7 @@ interface UserInterface
      *
      * @param int $operationIndex
      *
-     * @return \Source\Model\Operation\OperationInterface
+     * @return string
      */
-    public function getCommissionAmount(int $operationIndex = -1): OperationInterface;
+    public function getCommissionAmount(int $operationIndex = -1): string;
 }

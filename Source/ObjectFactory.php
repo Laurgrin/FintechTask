@@ -122,10 +122,12 @@ class ObjectFactory
         $argumentTypes = [];
         
         $reflection = new ReflectionClass($fqn);
-        $args = $reflection->getConstructor()->getParameters();
-        
-        foreach ($args as $arg) {
-            $argumentTypes[] = $arg->getClass()->getName();
+        if ($args = $reflection->getConstructor()) {
+            $args = $args->getParameters();
+    
+            foreach ($args as $arg) {
+                $argumentTypes[] = $arg->getClass()->getName();
+            }
         }
         
         return $argumentTypes;

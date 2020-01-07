@@ -2,5 +2,5 @@
   "parser": "Source\\Parser\\OperationParserInterface",
   "user": "Source\\Model\\User\\UserInterface",
   "operation": "Source\\Model\\Operation\\OperationInterface",
-  "money": "Source\\Model\\Currency\\MoneyInterface"
+  "money": "Source\\Model\\Money\\MoneyInterface"
 }

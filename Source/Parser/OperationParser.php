@@ -28,22 +28,42 @@ class OperationParser extends AbstractParser
         $users      = [];
         while (!$fileHandle->eof()) {
             $line = $this->parseLine($fileHandle->fgetcsv());
+            $this->addOperation($users, $line);
             
-            /* If there's no such user yet, create and initialize it. Skip creation otherwise. */
-            if (!array_key_exists($line["user_id"], $users)) {
-                $users[$line["user_id"]] = ObjectFactory::build("user");
-                $users[$line["user_id"]]->setUserId($line["user_id"])->setUserType($line["user_type"]);
-            }
-            
-            /* Create money object to add to the operation object */
-            /** @var \Source\Model\Money\MoneyInterface $money */
-            $money = ObjectFactory::build("money");
-            $money->setAmount($line["operation_amount"])->setCurrency($line["operation_currency"]);
-            
-            /** @var \Source\Model\Operation\OperationInterface $operation */
-            $operation = ObjectFactory::build("operation");
-            $operation->setDate($line["date"])->setMoney($money)->setType($line["operation_type"]);
+            $user = $users[$line["user_id"]];
+            var_dump($user->getCommissionAmount());
+            die();
         }
+    }
+    
+    /**
+     * Adds an operation to the user array using the CSV line.
+     *
+     * @param array $users
+     * @param array $line
+     *
+     * @throws \ReflectionException
+     * @throws \Source\Exception\DefinitionNotFoundException
+     * @throws \Source\Exception\FileNotFoundException
+     */
+    protected function addOperation(array &$users, array $line)
+    {
+        /* If there's no such user yet, create and initialize it. Skip creation otherwise. */
+        if (!array_key_exists($line["user_id"], $users)) {
+            $users[$line["user_id"]] = ObjectFactory::build("user");
+            $users[$line["user_id"]]->setUserId($line["user_id"])->setUserType($line["user_type"]);
+        }
+    
+        /* Create money object to add to the operation object */
+        /** @var \Source\Model\Money\MoneyInterface $money */
+        $money = ObjectFactory::build("money");
+        $money->setAmount($line["operation_amount"])->setCurrencyName($line["operation_currency"]);
+    
+        /** @var \Source\Model\Operation\OperationInterface $operation */
+        $operation = ObjectFactory::build("operation");
+        $operation->setDate($line["date"])->setMoney($money)->setType($line["operation_type"]);
+    
+        $users[$line["user_id"]]->addOperation($operation);
     }
     
     /**

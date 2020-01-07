@@ -1,0 +1,15 @@
+{
+  "EUR": {
+    "precision": 2,
+    "conversion": {
+      "USD": "1.1497",
+      "JPY": "129.53"
+    }
+  },
+  "USD": {
+    "precision": 2
+  },
+  "JPY": {
+    "precision": 2
+  }
+}
