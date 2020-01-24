@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Parser\Calculator;
 
@@ -8,8 +8,8 @@ use Source\ObjectFactory;
 
 class Calculator implements CalculatorInterface
 {
-    const PRECISION  = "precision";
-    const CONVERSION = "conversion";
+    const PRECISION  = 'precision';
+    const CONVERSION = 'conversion';
     
     /**
      * @var array
@@ -23,7 +23,7 @@ class Calculator implements CalculatorInterface
     public function __construct()
     {
         if (!file_exists(CURRENCY_PATH)) {
-            throw new FileNotFoundException("Currency conversion file not found in " . CURRENCY_PATH);
+            throw new FileNotFoundException('Currency conversion file not found in ' . CURRENCY_PATH);
         }
         
         $this->currencyData = json_decode(file_get_contents(CURRENCY_PATH), true);
@@ -56,11 +56,11 @@ class Calculator implements CalculatorInterface
      * @throws \Source\Exception\DefinitionNotFoundException
      * @throws \Source\Exception\FileNotFoundException
      */
-    public function sum(array $money, string $targetCurrency = "EUR"): MoneyInterface
+    public function sumCashOutOperations(array $money): MoneyInterface
     {
         /** @var MoneyInterface $sum */
-        $sum = ObjectFactory::build("money");
-        $sum->setCurrencyName($targetCurrency)->setAmount("0");
+        $sum = ObjectFactory::build('money');
+        $sum->setCurrencyName(MoneyInterface::CURRENCY_EURO)->setAmount('0');
         
         foreach ($money as $operationAmount) {
             $currentSum = $this->toEur($sum)->getAmount();
@@ -99,4 +99,16 @@ class Calculator implements CalculatorInterface
         return $money;
     }
     
+    /**
+     * Subtracts the specified sum from the money object
+     *
+     * @param \Source\Model\Money\MoneyInterface $money
+     * @param string                             $amount
+     *
+     * @return \Source\Model\Money\MoneyInterface
+     */
+    public function subtract(MoneyInterface $money, string $amount): MoneyInterface
+    {
+        // TODO: Implement subtract() method.
+    }
 }

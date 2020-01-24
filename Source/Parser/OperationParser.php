@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Parser;
 
@@ -30,7 +30,7 @@ class OperationParser extends AbstractParser
             $line = $this->parseLine($fileHandle->fgetcsv());
             $this->addOperation($users, $line);
             
-            $user = $users[$line["user_id"]];
+            $user = $users[$line['user_id']];
             var_dump($user->getCommissionAmount());
             die();
         }
@@ -49,21 +49,21 @@ class OperationParser extends AbstractParser
     protected function addOperation(array &$users, array $line)
     {
         /* If there's no such user yet, create and initialize it. Skip creation otherwise. */
-        if (!array_key_exists($line["user_id"], $users)) {
-            $users[$line["user_id"]] = ObjectFactory::build("user");
-            $users[$line["user_id"]]->setUserId($line["user_id"])->setUserType($line["user_type"]);
+        if (!array_key_exists($line['user_id'], $users)) {
+            $users[$line['user_id']] = ObjectFactory::build('user');
+            $users[$line['user_id']]->setUserId($line['user_id'])->setUserType($line['user_type']);
         }
     
         /* Create money object to add to the operation object */
         /** @var \Source\Model\Money\MoneyInterface $money */
-        $money = ObjectFactory::build("money");
-        $money->setAmount($line["operation_amount"])->setCurrencyName($line["operation_currency"]);
+        $money = ObjectFactory::build('money');
+        $money->setAmount($line['operation_amount'])->setCurrencyName($line['operation_currency']);
     
         /** @var \Source\Model\Operation\OperationInterface $operation */
-        $operation = ObjectFactory::build("operation");
-        $operation->setDate($line["date"])->setMoney($money)->setType($line["operation_type"]);
+        $operation = ObjectFactory::build('operation');
+        $operation->setDate($line['date'])->setMoney($money)->setType($line['operation_type']);
     
-        $users[$line["user_id"]]->addOperation($operation);
+        $users[$line['user_id']]->addOperation($operation);
     }
     
     /**
@@ -76,12 +76,12 @@ class OperationParser extends AbstractParser
     protected function parseLine(array $line): array
     {
         return [
-            "date"               => $line[0],
-            "user_id"            => $line[1],
-            "user_type"          => $line[2],
-            "operation_type"     => $line[3],
-            "operation_amount"   => $line[4],
-            "operation_currency" => $line[5],
+            'date'               => $line[0],
+            'user_id'            => $line[1],
+            'user_type'          => $line[2],
+            'operation_type'     => $line[3],
+            'operation_amount'   => $line[4],
+            'operation_currency' => $line[5],
         ];
     }
     
@@ -98,7 +98,7 @@ class OperationParser extends AbstractParser
         }
         
         $fileHandle = new SplFileObject($inputFile);
-        $fileHandle->setCsvControl(",", "\"");
+        $fileHandle->setCsvControl(',', '"');
         
         return $fileHandle;
     }

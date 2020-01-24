@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Model\Operation;
 
@@ -6,9 +6,9 @@ use Source\Model\Money\MoneyInterface;
 
 interface OperationInterface
 {
-    const OPERATION_TYPE_IN  = "cash_in";
-    const OPERATION_TYPE_OUT = "cash_out";
-    const DATE_FORMAT        = "Y-m-d";
+    const OPERATION_TYPE_IN  = 'cash_in';
+    const OPERATION_TYPE_OUT = 'cash_out';
+    const DATE_FORMAT        = 'Y-m-d';
     
     /**
      * Get operation's date.

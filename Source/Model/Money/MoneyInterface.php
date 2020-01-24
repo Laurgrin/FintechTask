@@ -1,19 +1,19 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Model\Money;
 
 interface MoneyInterface
 {
-    const CASH_IN_FEE_PERCENTAGE = 0.0003; //0.03%
-    const CASH_IN_FEE_MAX        = 5; //Of operation's currency
+    const CASH_IN_FEE_PERCENTAGE = '0.0003'; //0.03%
+    const CASH_IN_FEE_MAX        = '5'; //Of operation's currency
     
-    const CASH_OUT_FREE_WEEKLY_AMOUNT   = 1000;
-    const CASH_OUT_FEE                  = 0.003; //0.3%
-    const CASH_OUT_FEE_MIN_LEGAL_PERSON = 0.50;
+    const CASH_OUT_FREE_WEEKLY_AMOUNT   = '1000';
+    const CASH_OUT_FEE                  = '0.003'; //0.3%
+    const CASH_OUT_FEE_MIN_LEGAL_PERSON = '0.50';
     
-    const CURRENCY_EURO      = "EUR";
-    const CURRENCY_US_DOLLAR = "USD";
-    const CURRENCY_YEN       = "JPY";
+    const CURRENCY_EURO      = 'EUR';
+    const CURRENCY_US_DOLLAR = 'USD';
+    const CURRENCY_YEN       = 'JPY';
     
     /**
      * Returns the amount of currency.

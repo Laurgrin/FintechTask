@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Model\User;
 
@@ -118,14 +118,18 @@ class User implements UserInterface
                     MoneyInterface::CASH_IN_FEE_MAX
                 );
             case OperationInterface::OPERATION_TYPE_OUT:
-                $operations       = $this->getOperationsInSameWeek($operationIndex);
-                $operationAmounts = [];
-                
-                foreach ($operations as $operation) {
-                    $operationAmounts[] = $operation->getMoney();
+                if ($this->getUserType() === UserInterface::USER_TYPE_NATURAL) {
+                    $operations       = $this->getOperationsInSameWeek($operationIndex);
+                    $operationAmounts = [];
+    
+                    foreach ($operations as $operation) {
+                        $operationAmounts[] = $operation->getMoney();
+                    }
+    
+                    $operationSum = $this->calculator->sumCashOutOperations($operationAmounts);
+                    var_dump($operationSum);
+                    die();
                 }
-                
-                var_dump($this->calculator->sum($operationAmounts));
                 die();
             default:
                 throw new OperationTypeException("Unsupported operation {$operation->getType()}");

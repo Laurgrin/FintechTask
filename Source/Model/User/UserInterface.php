@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Model\User;
 
@@ -6,8 +6,8 @@ use Source\Model\Operation\OperationInterface;
 
 interface UserInterface
 {
-    const USER_TYPE_NATURAL = "natural";
-    const USER_TYPE_LEGAL   = "legal";
+    const USER_TYPE_NATURAL = 'natural';
+    const USER_TYPE_LEGAL   = 'legal';
     
     /**
      * Get user ID.

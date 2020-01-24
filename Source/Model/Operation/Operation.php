@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Model\Operation;
 
@@ -33,7 +33,7 @@ class Operation implements OperationInterface
      */
     public function __construct(MoneyInterface $cashOutDiscount)
     {
-        $cashOutDiscount->setAmount("1000")->setCurrencyName("EUR");
+        $cashOutDiscount->setAmount('1000')->setCurrencyName('EUR');
         $this->cashOutDiscount = $cashOutDiscount;
     }
     
@@ -116,7 +116,7 @@ class Operation implements OperationInterface
      */
     public function getWeekNumber(): int
     {
-        return $this->date->format("W");
+        return (int)$this->date->format('W');
     }
     
     /**
