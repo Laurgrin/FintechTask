@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Parser\Output;
 
@@ -9,7 +9,7 @@ interface OutputInterface
      *
      * @param string $line
      */
-    public function addLine(string $line): void;
+    public function addLine(string $line);
     
     /**
      * Return the output as a formatted string.

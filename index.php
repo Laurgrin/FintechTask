@@ -6,14 +6,17 @@ define('CURRENCY_PATH', ROOT_PATH . '/Config/currency.json');
 
 require_once(__DIR__ . '/vendor/autoload.php');
 try {
-    $object = \Source\ObjectFactory::build('parser');
+    $objectManager = \Source\ObjectManager::getInstance();
+    $parser = $objectManager->get(\Source\Parser\OperationParser::class);
 } catch (\Source\Exception\FileNotFoundException $e) {
     die($e->getMessage());
 } catch (ReflectionException $e) {
     die($e->getMessage());
-} catch (\Source\Exception\DefinitionNotFoundException $e) {
+} catch (JsonException $e) {
+    die($e->getMessage());
+} catch (\Source\Exception\ContainerException $e) {
     die($e->getMessage());
 }
 
-/** @var $object \Source\Parser\OperationParserInterface */
-$object->parseOperations($argv[1]);
+/** @var $parser \Source\Parser\OperationParserInterface */
+$parser->parseOperations($argv[1]);

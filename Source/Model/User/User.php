@@ -2,23 +2,10 @@
 
 namespace Source\Model\User;
 
-use Source\Exception\OperationTypeException;
-use Source\Model\Money\MoneyInterface;
 use Source\Model\Operation\OperationInterface;
-use Source\Parser\Calculator\CalculatorInterface;
 
 class User implements UserInterface
 {
-    /**
-     * @var \Source\Parser\Calculator\CalculatorInterface
-     */
-    protected $calculator;
-    
-    public function __construct(CalculatorInterface $calculator)
-    {
-        $this->calculator = $calculator;
-    }
-    
     /**
      * @var string
      */
@@ -97,68 +84,12 @@ class User implements UserInterface
     }
     
     /**
-     * Calculates and returns the commission of specified operation. By default, it will be the last one.
-     *
-     * @param int $operationIndex
-     *
-     * @return \Source\Model\Operation\OperationInterface
-     * @throws \Source\Exception\OperationTypeException
-     */
-    public function getCommissionAmount(int $operationIndex = -1): string
-    {
-        $operation = $operationIndex === -1 ? end($this->operations) : $this->operations[$operationIndex];
-        
-        switch ($operation->getType()) {
-            case OperationInterface::OPERATION_TYPE_IN:
-                return max(
-                    $this->calculator->multiply(
-                        $operation->getMoney(),
-                        MoneyInterface::CASH_IN_FEE_PERCENTAGE
-                    )->getAmount(),
-                    MoneyInterface::CASH_IN_FEE_MAX
-                );
-            case OperationInterface::OPERATION_TYPE_OUT:
-                if ($this->getUserType() === UserInterface::USER_TYPE_NATURAL) {
-                    $operations       = $this->getOperationsInSameWeek($operationIndex);
-                    $operationAmounts = [];
-    
-                    foreach ($operations as $operation) {
-                        $operationAmounts[] = $operation->getMoney();
-                    }
-    
-                    $operationSum = $this->calculator->sumCashOutOperations($operationAmounts);
-                    var_dump($operationSum);
-                    die();
-                }
-                die();
-            default:
-                throw new OperationTypeException("Unsupported operation {$operation->getType()}");
-        }
-    }
-    
-    /**
-     * Returns an array of cash out operations made in the same week as the operation with the specified index.
-     * By default, it will use the week of the latest operation.
-     *
-     * @param int $operationIndex
+     * Returns all operations for this user.
      *
      * @return OperationInterface[]
      */
-    protected function getOperationsInSameWeek(int $operationIndex = -1): array
+    public function getOperations(): array
     {
-        $operations = [];
-        
-        /* Get the week number of the specified operation*/
-        $week =
-            $operationIndex === -1 ? end($this->operations)->getWeekNumber() :
-                $this->operations[$operationIndex]->getWeekNumber();
-        
-        foreach ($this->operations as $operation) {
-            if ($week === $operation->getWeekNumber() && $operation->getType() === OperationInterface::OPERATION_TYPE_OUT) {
-                $operations[] = $operation;
-            }
-        }
-        
-        return $operations;
+        return $this->operations;
     }
 }

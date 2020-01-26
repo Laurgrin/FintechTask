@@ -1,4 +1,5 @@
-<?php
+<?php declare(strict_types = 1);
+
 namespace Source\Parser;
 
 use Source\Parser\Output\OutputInterface;

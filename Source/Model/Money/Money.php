@@ -2,8 +2,6 @@
 
 namespace Source\Model\Money;
 
-use Source\Exception\FileNotFoundException;
-
 class Money implements MoneyInterface
 {
     /**

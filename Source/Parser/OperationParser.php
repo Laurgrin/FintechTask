@@ -3,7 +3,10 @@
 namespace Source\Parser;
 
 use Source\Exception\FileNotFoundException;
-use Source\ObjectFactory;
+use Source\Model\Money\MoneyInterface;
+use Source\Model\Operation\OperationInterface;
+use Source\Model\User\UserInterface;
+use Source\ObjectManager;
 use Source\Parser\Output\OutputInterface;
 use SplFileObject;
 
@@ -16,9 +19,12 @@ class OperationParser extends AbstractParser
      * @param string $inputFile
      *
      * @return \Source\Parser\Output\OutputInterface
+     * @throws \JsonException
      * @throws \ReflectionException
-     * @throws \Source\Exception\DefinitionNotFoundException
+     * @throws \Source\Exception\ContainerException
      * @throws \Source\Exception\FileNotFoundException
+     * @throws \Source\Exception\OperationTypeException
+     * @throws \Source\Exception\UserTypeException
      */
     public function parseOperations(string $inputFile): OutputInterface
     {
@@ -31,7 +37,8 @@ class OperationParser extends AbstractParser
             $this->addOperation($users, $line);
             
             $user = $users[$line['user_id']];
-            var_dump($user->getCommissionAmount());
+            $commissionAmount = $this->commissionCalculator->getCommissionAmount($user->getOperations(), $user->getUserType());
+            var_dump($commissionAmount);
             die();
         }
     }
@@ -42,25 +49,28 @@ class OperationParser extends AbstractParser
      * @param array $users
      * @param array $line
      *
+     * @throws \JsonException
      * @throws \ReflectionException
-     * @throws \Source\Exception\DefinitionNotFoundException
+     * @throws \Source\Exception\ContainerException
      * @throws \Source\Exception\FileNotFoundException
      */
     protected function addOperation(array &$users, array $line)
     {
+        $objectManager = ObjectManager::getInstance();
+        
         /* If there's no such user yet, create and initialize it. Skip creation otherwise. */
         if (!array_key_exists($line['user_id'], $users)) {
-            $users[$line['user_id']] = ObjectFactory::build('user');
+            $users[$line['user_id']] = $objectManager->get(UserInterface::class);
             $users[$line['user_id']]->setUserId($line['user_id'])->setUserType($line['user_type']);
         }
     
         /* Create money object to add to the operation object */
         /** @var \Source\Model\Money\MoneyInterface $money */
-        $money = ObjectFactory::build('money');
+        $money = $objectManager->get(MoneyInterface::class);
         $money->setAmount($line['operation_amount'])->setCurrencyName($line['operation_currency']);
     
         /** @var \Source\Model\Operation\OperationInterface $operation */
-        $operation = ObjectFactory::build('operation');
+        $operation = $objectManager->get(OperationInterface::class);
         $operation->setDate($line['date'])->setMoney($money)->setType($line['operation_type']);
     
         $users[$line['user_id']]->addOperation($operation);

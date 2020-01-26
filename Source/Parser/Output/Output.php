@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Source\Parser\Output;
 
@@ -11,7 +11,7 @@ class Output implements OutputInterface
     
     public function __construct()
     {
-        $this->output = "";
+        $this->output = '';
     }
     
     /**
@@ -19,14 +19,14 @@ class Output implements OutputInterface
      *
      * @param string $line
      */
-    public function addLine(string $line): void
+    public function addLine(string $line)
     {
         $this->output .= $line . PHP_EOL;
     }
     
-    protected function clearOutput():void
+    protected function clearOutput()
     {
-        $this->output = "";
+        $this->output = '';
     }
     
     /**

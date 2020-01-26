@@ -1,6 +1,0 @@
-{
-  "parser": "Source\\Parser\\OperationParserInterface",
-  "user": "Source\\Model\\User\\UserInterface",
-  "operation": "Source\\Model\\Operation\\OperationInterface",
-  "money": "Source\\Model\\Money\\MoneyInterface"
-}

@@ -51,11 +51,9 @@ interface UserInterface
     public function addOperation(OperationInterface $operation): int;
     
     /**
-     * Calculates and returns the commission of specified operation. By default, it will be the last one.
+     * Returns all operations for this user.
      *
-     * @param int $operationIndex
-     *
-     * @return string
+     * @return OperationInterface[]
      */
-    public function getCommissionAmount(int $operationIndex = -1): string;
+    public function getOperations(): array;
 }

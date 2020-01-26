@@ -4,5 +4,5 @@
   "Source\\Model\\User\\UserInterface": "Source\\Model\\User\\User",
   "Source\\Model\\Operation\\OperationInterface": "Source\\Model\\Operation\\Operation",
   "Source\\Model\\Money\\MoneyInterface": "Source\\Model\\Money\\Money",
-  "Source\\Parser\\Calculator\\CalculatorInterface": "Source\\Parser\\Calculator\\Calculator"
+  "Source\\Parser\\Calculator\\MathInterface": "Source\\Parser\\Calculator\\Math"
 }
