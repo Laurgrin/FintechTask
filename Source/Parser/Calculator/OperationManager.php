@@ -4,6 +4,7 @@ namespace Source\Parser\Calculator;
 
 use Source\Model\Money\MoneyInterface;
 use Source\Model\Operation\OperationInterface;
+use Source\Model\User\UserInterface;
 use Source\ObjectManager;
 
 class OperationManager
@@ -23,6 +24,9 @@ class OperationManager
     }
     
     /**
+     * Returns the operations made in the same week as the one specified by the $operationIndex. If it is not specified,
+     * it will take the last operation by default.
+     *
      * @param array $operations
      * @param int   $operationIndex
      *
@@ -33,9 +37,16 @@ class OperationManager
         $result = [];
     
         /* Get the week number of the specified operation*/
-        $week = $operationIndex === -1 ? end($operations)->getWeekNumber() :
-                $operations[$operationIndex]->getWeekNumber();
-    
+        if ($operationIndex === -1) {
+            $week = end($operations)->getWeekNumber();
+            /* We shouldn't count the current operation, we just needed it's week */
+            array_pop($operations);
+        } else {
+            $week = $operations[$operationIndex]->getWeekNumber();
+            /* Remove all elements after index, we don't need future operations */
+            $operations = array_slice($operations, 0, count($operations) - ($operationIndex + 1));
+        }
+        
         foreach ($operations as $operation) {
             if ($week === $operation->getWeekNumber() && $operation->getType() === OperationInterface::OPERATION_TYPE_OUT) {
                 $result[] = $operation;
@@ -46,7 +57,7 @@ class OperationManager
     }
     
     /**
-     * Sums the money object amounts in the specified currency.
+     * Sums the cash out operations
      *
      * @param \Source\Model\Operation\OperationInterface[] $operations
      *
@@ -70,5 +81,33 @@ class OperationManager
         }
         
         return $sum;
+    }
+    
+    /**
+     * Returns the amount from which to calculate commission from.
+     *
+     * @param array                              $operations
+     * @param \Source\Model\Money\MoneyInterface $sum
+     * @param \Source\Model\Money\MoneyInterface $amount
+     *
+     * @return \Source\Model\Money\MoneyInterface
+     */
+    public function getAmountAfterDiscount(array $operations, MoneyInterface $sum, MoneyInterface $amount): MoneyInterface
+    {
+        /* If we hit the weekly discounted operation limit, it no longer applies */
+        if (count($operations) > OperationInterface::DISCOUNT_OPERATION_WEEKLY_LIMIT) {
+            return $sum;
+        }
+        
+        $remainingDiscount = $this->math->subtract($sum, OperationInterface::DISCOUNT_AMOUNT_WEEKLY_LIMIT);
+        $remainingDiscount->setAmount((string)abs($remainingDiscount->getAmount()));
+        if ((float)$remainingDiscount->getAmount() > 0) {
+            $amountAfterDiscount = $this->math->subtract($amount, $remainingDiscount->getAmount());
+            
+            /* We should really return negative numbers */
+            return $amountAfterDiscount > 0 ? $amountAfterDiscount : $amountAfterDiscount->setAmount('0');
+        }
+        
+        return $amount;
     }
 }

@@ -6,9 +6,11 @@ use Source\Model\Money\MoneyInterface;
 
 interface OperationInterface
 {
-    const OPERATION_TYPE_IN  = 'cash_in';
-    const OPERATION_TYPE_OUT = 'cash_out';
-    const DATE_FORMAT        = 'Y-m-d';
+    const OPERATION_TYPE_IN               = 'cash_in';
+    const OPERATION_TYPE_OUT              = 'cash_out';
+    const DATE_FORMAT                     = 'Y-m-d';
+    const DISCOUNT_OPERATION_WEEKLY_LIMIT = 3;
+    const DISCOUNT_AMOUNT_WEEKLY_LIMIT    = '1000'; //EUR
     
     /**
      * Get operation's date.

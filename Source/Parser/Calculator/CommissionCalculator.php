@@ -40,29 +40,40 @@ class CommissionCalculator
      * @param int                                          $operationIndex
      *
      * @return \Source\Model\Money\MoneyInterface
-     * @throws \Source\Exception\UserTypeException
+     * @throws \JsonException
+     * @throws \ReflectionException
+     * @throws \Source\Exception\ContainerException
+     * @throws \Source\Exception\FileNotFoundException
      * @throws \Source\Exception\OperationTypeException
+     * @throws \Source\Exception\UserTypeException
      */
-    public function getCommissionAmount(array $operations, string $userType, int $operationIndex = -1)
+    public function getCommissionAmount(array $operations, string $userType, int $operationIndex = -1): MoneyInterface
     {
         $operation = $operationIndex === -1 ? end($operations) : $operations[$operationIndex];
-    
+        
         switch ($operation->getType()) {
             case OperationInterface::OPERATION_TYPE_IN:
-                return max(
-                    $this->math->multiply(
-                        $operation->getMoney(),
-                        MoneyInterface::CASH_IN_FEE_PERCENTAGE
-                    )->getAmount(),
-                    MoneyInterface::CASH_IN_FEE_MAX
-                );
+                $min              =
+                    $this->math->multiply($operation->getMoney(), MoneyInterface::CASH_IN_FEE_PERCENTAGE)
+                               ->getAmount();
+                $commissionAmount = max($min, MoneyInterface::CASH_IN_FEE_MAX);
+                
+                return $operation->getMoney()->setCommissionAmount($commissionAmount);
             case OperationInterface::OPERATION_TYPE_OUT:
                 switch ($userType) {
                     case UserInterface::USER_TYPE_NATURAL:
-                        $operations   =
-                            $this->operationManager->getOperationsInSameWeek($operations, $operationIndex);
-                        $operationSum = $this->math->sumCashOutOperations($operations);
-                        break;
+                        $operations          = $this->operationManager->getOperationsInSameWeek(
+                            $operations,
+                            $operationIndex
+                        );
+                        $operationSum        = $this->operationManager->sumCashOutOperations($operations);
+                        $amountAfterDiscount = $this->operationManager->getAmountAfterDiscount(
+                            $operations,
+                            $operationSum,
+                            $operation->getMoney()
+                        );
+                        $commissionAmount    = $this->math->multiply($amountAfterDiscount, MoneyInterface::CASH_OUT_FEE);
+                        return $commissionAmount;
                     case UserInterface::USER_TYPE_LEGAL:
                         break;
                     default:
