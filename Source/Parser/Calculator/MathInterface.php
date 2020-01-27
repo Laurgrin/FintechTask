@@ -54,4 +54,13 @@ interface MathInterface
         string $targetCurrency = MoneyInterface::CURRENCY_EURO
     ): MoneyInterface;
     
+    /**
+     * Convert one currency to another
+     *
+     * @param \Source\Model\Money\MoneyInterface $money
+     * @param string                             $targetCurrency
+     *
+     * @return \Source\Model\Money\MoneyInterface
+     */
+    public function convert(MoneyInterface $money, string $targetCurrency = MoneyInterface::CURRENCY_EURO): MoneyInterface;
 }

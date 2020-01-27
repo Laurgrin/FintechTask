@@ -33,14 +33,17 @@ class Math implements MathInterface
         string $targetCurrency = MoneyInterface::CURRENCY_EURO
     ): MoneyInterface {
         $currencyData = $this->currencyConverter->getCurrencyData();
-        if ($money->getCurrencyName() !== $targetCurrency) {
-            $this->currencyConverter->convert($money, $targetCurrency);
+        $return       = clone($money);
+        $precision    = $currencyData[$targetCurrency][CurrencyConverter::PRECISION];
+        
+        if ($return->getCurrencyName() !== $targetCurrency) {
+            $this->convert($return, $targetCurrency);
         }
         
-        $result =
-            bcmul($money->getAmount(), $multiplier, $currencyData[$money->getCurrencyName()][CurrencyConverter::PRECISION]);
+        $result = bcmul($return->getAmount(), $multiplier, $precision + 1);
+        $result = (string)round($result, $precision);
         
-        return $money->setAmount($result);
+        return $return->setAmount($result);
     }
     
     /**
@@ -60,16 +63,17 @@ class Math implements MathInterface
         string $targetCurrency = MoneyInterface::CURRENCY_EURO
     ): MoneyInterface {
         $currencyData = $this->currencyConverter->getCurrencyData();
-        if ($money->getCurrencyName() !== $targetCurrency) {
-            $this->currencyConverter->convert($money, $targetCurrency);
+        $return       = clone($money);
+        $precision    = $currencyData[$targetCurrency][CurrencyConverter::PRECISION];
+        
+        if ($return->getCurrencyName() !== $targetCurrency) {
+            $this->convert($return, $targetCurrency);
         }
         
-        $result =
-            bcsub($money->getAmount(), $amount, $currencyData[$money->getCurrencyName()][CurrencyConverter::PRECISION]);
+        $result = bcsub($return->getAmount(), $amount, $precision + 1);
+        $result = (string)round($result, $precision);
         
-        $money->setAmount($result);
-        
-        return $money;
+        return $return->setAmount($result);
     }
     
     /**
@@ -89,15 +93,32 @@ class Math implements MathInterface
         string $targetCurrency = MoneyInterface::CURRENCY_EURO
     ): MoneyInterface {
         $currencyData = $this->currencyConverter->getCurrencyData();
-        if ($money->getCurrencyName() !== $targetCurrency) {
-            $this->currencyConverter->convert($money, $targetCurrency);
+        $return       = clone($money);
+        $precision    = $currencyData[$targetCurrency][CurrencyConverter::PRECISION];
+        
+        if ($return->getCurrencyName() !== $targetCurrency) {
+            $this->convert($return, $targetCurrency);
         }
         
-        $result =
-            bcadd($money->getAmount(), $amount, $currencyData[$money->getCurrencyName()][CurrencyConverter::PRECISION]);
+        $result = bcadd($return->getAmount(), $amount, $precision + 1);
+        $result = (string)round($result, $precision);
         
-        $money->setAmount($result);
-        
-        return $money;
+        return $return->setAmount($result);
+    }
+    
+    /**
+     * Convert one currency to another
+     *
+     * @param \Source\Model\Money\MoneyInterface $money
+     * @param string                             $targetCurrency
+     *
+     * @return \Source\Model\Money\MoneyInterface
+     * @throws \Source\Exception\FileNotFoundException
+     */
+    public function convert(
+        MoneyInterface $money,
+        string $targetCurrency = MoneyInterface::CURRENCY_EURO
+    ): MoneyInterface {
+        return $this->currencyConverter->convert($money, $targetCurrency);
     }
 }

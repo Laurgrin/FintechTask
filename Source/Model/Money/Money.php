@@ -15,11 +15,6 @@ class Money implements MoneyInterface
     protected $currencyName;
     
     /**
-     * @var string
-     */
-    protected $commission;
-    
-    /**
      * Returns the amount of currency.
      *
      * @return string
@@ -63,30 +58,6 @@ class Money implements MoneyInterface
     public function setCurrencyName(string $name): MoneyInterface
     {
         $this->currencyName = $name;
-        
-        return $this;
-    }
-    
-    /**
-     * Gets the operation's commission amount.
-     *
-     * @return string
-     */
-    public function getCommissionAmount(): string
-    {
-        return $this->commission;
-    }
-    
-    /**
-     * Sets the operation's commission amount.
-     *
-     * @param string $amount
-     *
-     * @return \Source\Model\Money\MoneyInterface
-     */
-    public function setCommissionAmount(string $amount): MoneyInterface
-    {
-        $this->commission = $amount;
         
         return $this;
     }

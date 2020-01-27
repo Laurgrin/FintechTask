@@ -33,7 +33,7 @@ class CurrencyConverter
             ) {
                 foreach ($this->currencyData[MoneyInterface::CURRENCY_EURO][self::CONVERSION] as $currency => $conversionRate) {
                     $this->currencyData[$currency][self::CONVERSION][MoneyInterface::CURRENCY_EURO]
-                        = bcdiv('1', $conversionRate, 4);
+                        = bcdiv('1', $conversionRate, 10);
                 }
             }
         }
@@ -57,13 +57,17 @@ class CurrencyConverter
         
         $currencyData = $this->getCurrencyData();
         $currencyFrom = $money->getCurrencyName();
+        $precision = $currencyData[$targetCurrency][self::PRECISION];
         
         if (array_key_exists($money->getCurrencyName(), $currencyData) &&
             array_key_exists($targetCurrency, $currencyData[$currencyFrom][self::CONVERSION])
         ) {
             $conversionRate = $currencyData[$currencyFrom][self::CONVERSION][$targetCurrency];
+            
+            $convertedAmount = bcmul($money->getAmount(), $conversionRate, $precision + 1);
+            $convertedAmount = (string)round($convertedAmount, $precision);
             $money->setCurrencyName($targetCurrency)
-                  ->setAmount(bcmul($money->getAmount(), $conversionRate));
+                  ->setAmount($convertedAmount);
         }
         
         return $money;

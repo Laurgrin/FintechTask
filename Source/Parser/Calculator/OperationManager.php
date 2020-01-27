@@ -4,7 +4,6 @@ namespace Source\Parser\Calculator;
 
 use Source\Model\Money\MoneyInterface;
 use Source\Model\Operation\OperationInterface;
-use Source\Model\User\UserInterface;
 use Source\ObjectManager;
 
 class OperationManager
@@ -19,7 +18,8 @@ class OperationManager
      *
      * @param \Source\Parser\Calculator\MathInterface $math
      */
-    public function __construct(MathInterface $math) {
+    public function __construct(MathInterface $math)
+    {
         $this->math = $math;
     }
     
@@ -35,24 +35,35 @@ class OperationManager
     public function getOperationsInSameWeek(array $operations, int $operationIndex = -1): array
     {
         $result = [];
-    
+        
         /* Get the week number of the specified operation*/
         if ($operationIndex === -1) {
             $week = end($operations)->getWeekNumber();
+            
             /* We shouldn't count the current operation, we just needed it's week */
-            array_pop($operations);
+            $currentOperation = array_pop($operations);
         } else {
             $week = $operations[$operationIndex]->getWeekNumber();
+            
             /* Remove all elements after index, we don't need future operations */
-            $operations = array_slice($operations, 0, count($operations) - ($operationIndex + 1));
+            $operations       = array_slice($operations, 0, count($operations) - $operationIndex);
+            $currentOperation = array_pop($operations);
         }
         
+        /** @var OperationInterface $currentOperation */
         foreach ($operations as $operation) {
-            if ($week === $operation->getWeekNumber() && $operation->getType() === OperationInterface::OPERATION_TYPE_OUT) {
+            $currentOperationDate = \DateTime::createFromFormat('Y-m-d', $currentOperation->getDate());
+            $evaluatedDate        = \DateTime::createFromFormat('Y-m-d', $operation->getDate());
+            $diff                 = $currentOperationDate->diff($evaluatedDate);
+            
+            if ($diff->days < 7 &&
+                $week === $operation->getWeekNumber() &&
+                $operation->getType() === OperationInterface::OPERATION_TYPE_OUT
+            ) {
                 $result[] = $operation;
             }
         }
-    
+        
         return $result;
     }
     
@@ -76,8 +87,8 @@ class OperationManager
         $sum->setCurrencyName(MoneyInterface::CURRENCY_EURO)->setAmount('0');
         
         foreach ($operations as $operation) {
-            $operationAmount = $operation->getMoney();
-            $sum = $this->math->add($sum, $operationAmount->getAmount());
+            $operationAmount = $this->math->convert($operation->getMoney());
+            $sum             = $this->math->add($sum, $operationAmount->getAmount());
         }
         
         return $sum;
@@ -91,23 +102,39 @@ class OperationManager
      * @param \Source\Model\Money\MoneyInterface $amount
      *
      * @return \Source\Model\Money\MoneyInterface
+     * @throws \JsonException
+     * @throws \ReflectionException
+     * @throws \Source\Exception\ContainerException
+     * @throws \Source\Exception\FileNotFoundException
      */
-    public function getAmountAfterDiscount(array $operations, MoneyInterface $sum, MoneyInterface $amount): MoneyInterface
-    {
+    public function getAmountAfterDiscount(
+        array $operations,
+        MoneyInterface $sum,
+        MoneyInterface $amount
+    ): MoneyInterface {
+        $objectManager = ObjectManager::getInstance();
+        /** @var MoneyInterface $result */
+        $result = $objectManager->get(MoneyInterface::class);
+        $result->setCurrencyName($amount->getCurrencyName())->setAmount($amount->getAmount());
+        
+        /** @var MoneyInterface $discount */
+        $discount = $objectManager->get(MoneyInterface::class);
+        $discount->setCurrencyName(MoneyInterface::CURRENCY_EURO)
+                 ->setAmount(OperationInterface::DISCOUNT_AMOUNT_WEEKLY_LIMIT);
+        
         /* If we hit the weekly discounted operation limit, it no longer applies */
         if (count($operations) > OperationInterface::DISCOUNT_OPERATION_WEEKLY_LIMIT) {
-            return $sum;
+            return $result;
         }
         
-        $remainingDiscount = $this->math->subtract($sum, OperationInterface::DISCOUNT_AMOUNT_WEEKLY_LIMIT);
-        $remainingDiscount->setAmount((string)abs($remainingDiscount->getAmount()));
+        $remainingDiscount = $this->math->subtract($discount, $sum->getAmount());
         if ((float)$remainingDiscount->getAmount() > 0) {
-            $amountAfterDiscount = $this->math->subtract($amount, $remainingDiscount->getAmount());
+            $amountAfterDiscount = $this->math->subtract($result, $remainingDiscount->getAmount());
             
-            /* We should really return negative numbers */
-            return $amountAfterDiscount > 0 ? $amountAfterDiscount : $amountAfterDiscount->setAmount('0');
+            /* We should not return negative numbers */
+            return $amountAfterDiscount->getAmount() > 0 ? $amountAfterDiscount : $amountAfterDiscount->setAmount('0');
         }
         
-        return $amount;
+        return $result;
     }
 }

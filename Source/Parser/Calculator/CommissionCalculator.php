@@ -50,15 +50,20 @@ class CommissionCalculator
     public function getCommissionAmount(array $operations, string $userType, int $operationIndex = -1): MoneyInterface
     {
         $operation = $operationIndex === -1 ? end($operations) : $operations[$operationIndex];
+        $result    = clone($operation->getMoney());
         
         switch ($operation->getType()) {
             case OperationInterface::OPERATION_TYPE_IN:
                 $min              =
-                    $this->math->multiply($operation->getMoney(), MoneyInterface::CASH_IN_FEE_PERCENTAGE)
-                               ->getAmount();
-                $commissionAmount = max($min, MoneyInterface::CASH_IN_FEE_MAX);
+                    $this->math->multiply($operation->getMoney(),
+                                          MoneyInterface::CASH_IN_FEE_PERCENTAGE,
+                                          $operation->getMoney()->getCurrencyName()
+                    )->getAmount();
+                $commissionAmount = min($min, MoneyInterface::CASH_IN_FEE_MAX);
                 
-                return $operation->getMoney()->setCommissionAmount($commissionAmount);
+                $result->setAmount($commissionAmount);
+                
+                return $result;
             case OperationInterface::OPERATION_TYPE_OUT:
                 switch ($userType) {
                     case UserInterface::USER_TYPE_NATURAL:
@@ -72,14 +77,31 @@ class CommissionCalculator
                             $operationSum,
                             $operation->getMoney()
                         );
-                        $commissionAmount    = $this->math->multiply($amountAfterDiscount, MoneyInterface::CASH_OUT_FEE);
-                        return $commissionAmount;
+                        $commissionAmount    = $this->math->multiply(
+                            $amountAfterDiscount,
+                            MoneyInterface::CASH_OUT_FEE,
+                            $operation->getMoney()->getCurrencyName()
+                        );
+                        
+                        $result->setAmount($commissionAmount->getAmount());
+                        
+                        return $result;
                     case UserInterface::USER_TYPE_LEGAL:
-                        break;
+                        $legalPersonCommission =
+                            $this->math->multiply(
+                                $operation->getMoney(),
+                                MoneyInterface::CASH_OUT_FEE,
+                                $operation->getMoney()->getCurrencyName()
+                            );
+                        $commissionAmount      =
+                            max(MoneyInterface::CASH_OUT_FEE_MIN_LEGAL_PERSON, $legalPersonCommission->getAmount());
+                        
+                        $result->setAmount($commissionAmount);
+                        
+                        return $result;
                     default:
                         throw new UserTypeException(sprintf('Unsupported user type: %s', $userType));
                 }
-                break;
             default:
                 throw new OperationTypeException(sprintf('Unsupported operation: %s', $operation->getType()));
         }

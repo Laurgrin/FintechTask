@@ -37,10 +37,15 @@ class OperationParser extends AbstractParser
             $this->addOperation($users, $line);
             
             $user = $users[$line['user_id']];
-            $commissionAmount = $this->commissionCalculator->getCommissionAmount($user->getOperations(), $user->getUserType());
-            var_dump($commissionAmount);
-            die();
+            $commissionAmount = $this->commissionCalculator->getCommissionAmount(
+                $user->getOperations(),
+                $user->getUserType()
+            );
+            
+            $this->output->addLine($commissionAmount->getAmount());
         }
+        
+        return $this->output;
     }
     
     /**
@@ -54,7 +59,7 @@ class OperationParser extends AbstractParser
      * @throws \Source\Exception\ContainerException
      * @throws \Source\Exception\FileNotFoundException
      */
-    protected function addOperation(array &$users, array $line)
+    public function addOperation(array &$users, array $line)
     {
         $objectManager = ObjectManager::getInstance();
         
@@ -83,7 +88,7 @@ class OperationParser extends AbstractParser
      *
      * @return array
      */
-    protected function parseLine(array $line): array
+    public function parseLine(array $line): array
     {
         return [
             'date'               => $line[0],
@@ -101,10 +106,10 @@ class OperationParser extends AbstractParser
      * @return \SplFileObject
      * @throws \Source\Exception\FileNotFoundException
      */
-    protected function getInputHandle(string $inputFile): SplFileObject
+    public function getInputHandle(string $inputFile): SplFileObject
     {
         if (!file_exists($inputFile)) {
-            throw new FileNotFoundException("Input file $inputFile not found.");
+            throw new FileNotFoundException(sprintf('Input file %s not found.', $inputFile));
         }
         
         $fileHandle = new SplFileObject($inputFile);

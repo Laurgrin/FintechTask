@@ -46,20 +46,4 @@ interface MoneyInterface
      * @return \Source\Model\Money\MoneyInterface
      */
     public function setCurrencyName(string $name): MoneyInterface;
-    
-    /**
-     * Gets the operation's commission amount.
-     *
-     * @return string
-     */
-    public function getCommissionAmount(): string;
-    
-    /**
-     * Sets the operation's commission amount.
-     *
-     * @param string $amount
-     *
-     * @return \Source\Model\Money\MoneyInterface
-     */
-    public function setCommissionAmount(string $amount): MoneyInterface;
 }

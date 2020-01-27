@@ -61,22 +61,6 @@ interface OperationInterface
     public function setMoney(MoneyInterface $money): OperationInterface;
     
     /**
-     * Get the operation's remaining weekly cash out discount.
-     *
-     * @return \Source\Model\Money\MoneyInterface
-     */
-    public function getWeeklyCashOutDiscount(): MoneyInterface;
-    
-    /**
-     * Set the operation's remaining weekly cash out discount.
-     *
-     * @param \Source\Model\Money\MoneyInterface $money
-     *
-     * @return \Source\Model\Operation\OperationInterface
-     */
-    public function setWeeklyCashOutDiscount(MoneyInterface $money): OperationInterface;
-    
-    /**
      * Returns the number of the week in year of the operation (set by setDate).
      *
      * @return int

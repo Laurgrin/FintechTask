@@ -118,28 +118,4 @@ class Operation implements OperationInterface
     {
         return (int)$this->date->format('W');
     }
-    
-    /**
-     * Get the operation's remaining weekly cash out discount.
-     *
-     * @return \Source\Model\Money\MoneyInterface
-     */
-    public function getWeeklyCashOutDiscount(): MoneyInterface
-    {
-        return $this->cashOutDiscount;
-    }
-    
-    /**
-     * Set the operation's remaining weekly cash out discount.
-     *
-     * @param \Source\Model\Money\MoneyInterface $money
-     *
-     * @return \Source\Model\Operation\OperationInterface
-     */
-    public function setWeeklyCashOutDiscount(MoneyInterface $money): OperationInterface
-    {
-        $this->cashOutDiscount = $money;
-        
-        return $this;
-    }
 }
