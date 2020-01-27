@@ -33,7 +33,7 @@ class CurrencyConverter
             ) {
                 foreach ($this->currencyData[MoneyInterface::CURRENCY_EURO][self::CONVERSION] as $currency => $conversionRate) {
                     $this->currencyData[$currency][self::CONVERSION][MoneyInterface::CURRENCY_EURO]
-                        = bcdiv('1', $conversionRate, 10);
+                        = bcdiv('1', $conversionRate, 4);
                 }
             }
         }

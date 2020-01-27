@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38da5ce6-8040-442c-93d1-37264d0cd00a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/currency.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/currency.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Model/Money/Money.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/Money/Money.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Model/Operation/Operation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/Operation/Operation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Parser/Calculator/Math.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/Calculator/Math.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Parser/Calculator/MathInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/Calculator/MathInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Parser/OperationParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/OperationParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Parser/OperationParserInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Parser/OperationParserInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,207 +18,170 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <executablePath>composer</executablePath>
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/bootstrap.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="102">
+                    <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/README.md">
+                <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                  <state split_layout="SPLIT">
+                    <first_editor />
+                    <second_editor />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Config/currency.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="85">
+                    <caret line="5" column="20" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="20" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="542">
+                    <caret line="67" selection-start-line="67" selection-end-line="67" />
+                    <folding>
+                      <element signature="e#71#114#0#PHP" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="695">
+                    <caret line="98" column="35" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="35" />
+                    <folding>
+                      <element signature="e#60#103#0#PHP" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-2">
+                    <caret line="88" selection-start-line="88" selection-end-line="88" />
+                    <folding>
+                      <element signature="e#71#109#0#PHP" expanded="true" />
+                      <element signature="e#213#276#0#PHP" expanded="true" />
+                      <element signature="e#307#422#0#PHP" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="68">
+                    <caret line="52" selection-start-line="52" selection-end-line="52" />
+                    <folding>
+                      <element signature="e#71#115#0#PHP" expanded="true" />
+                      <element signature="e#313#379#0#PHP" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Source/Model/User/User.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="253">
+                    <caret line="54" selection-start-line="54" selection-end-line="54" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Config/currency.json">
+        <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/MathTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Config/di.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="-321">
+              <caret line="44" column="28" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="44" selection-end-column="28" />
               <folding>
-                <element signature="e#60#103#0#PHP" expanded="true" />
-                <element signature="e#248#603#0#PHP" expanded="true" />
-                <element signature="e#1139#1432#0#PHP" expanded="true" />
-                <element signature="e#2426#2549#0#PHP" expanded="true" />
-                <element signature="e#2928#3063#0#PHP" expanded="true" />
+                <element signature="e#82#113#0#PHP" expanded="true" />
+                <element signature="e#1312#1535#0#PHP" expanded="true" />
+                <element signature="e#2636#2864#0#PHP" expanded="true" />
+                <element signature="e#3564#3740#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/Operation/Operation.php">
+        <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/CommissionCalculatorTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/Money/Money.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/User/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="646">
+              <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
               <folding>
-                <element signature="e#2419#2518#0#PHP" expanded="true" />
+                <element signature="e#70#99#0#PHP" expanded="true" />
+                <element signature="e#2043#2108#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/ObjectManager.php">
+        <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/OperationManagerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="442">
+              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding>
-                <element signature="e#53#65#0#PHP" expanded="true" />
+                <element signature="e#70#99#0#PHP" expanded="true" />
+                <element signature="e#1904#2006#0#PHP" expanded="true" />
+                <element signature="e#1975#2031#0#PHP" expanded="true" />
+                <element signature="e#3402#3515#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php">
+        <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/CurrencyConverterTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="665">
+              <caret line="84" column="62" lean-forward="true" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
               <folding>
-                <element signature="e#71#115#0#PHP" expanded="true" />
-                <element signature="e#313#379#0#PHP" expanded="true" />
-                <element signature="e#423#486#0#PHP" expanded="true" />
-                <element signature="e#351#544#0#PHP" expanded="true" />
-                <element signature="e#912#1305#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="133" column="55" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
-              <folding>
-                <element signature="e#71#109#0#PHP" expanded="true" />
-                <element signature="e#213#276#0#PHP" expanded="true" />
-                <element signature="e#307#422#0#PHP" expanded="true" />
-                <element signature="e#559#810#0#PHP" expanded="true" />
-                <element signature="e#1979#2334#0#PHP" expanded="true" />
-                <element signature="e#2746#3061#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-              <folding>
-                <element signature="e#71#114#0#PHP" expanded="true" />
-                <element signature="e#185#359#0#PHP" expanded="true" />
-                <element signature="e#1506#1750#0#PHP" expanded="true" />
+                <element signature="e#70#99#0#PHP" expanded="true" />
+                <element signature="e#1817#2006#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/Math.php">
+        <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/OperationParserTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="96" column="85" lean-forward="true" selection-start-line="96" selection-start-column="85" selection-end-line="96" selection-end-column="85" />
+            <state relative-caret-position="223">
+              <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
               <folding>
-                <element signature="e#269#336#0#PHP" expanded="true" />
-                <element signature="e#1396#1768#0#PHP" expanded="true" />
-                <element signature="e#1540#1810#0#PHP" expanded="true" />
-                <element signature="e#3446#3681#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/User/UserInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="47" column="66" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
-              <folding>
-                <element signature="e#844#918#0#PHP" expanded="true" />
-                <element signature="e#975#1108#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/MathInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-              <folding>
-                <element signature="e#456#629#0#PHP" expanded="true" />
-                <element signature="e#743#988#0#PHP" expanded="true" />
-                <element signature="e#1575#1811#0#PHP" expanded="true" />
+                <element signature="e#70#113#0#PHP" expanded="true" />
+                <element signature="e#187#243#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -240,6 +194,8 @@
       <find>Source\Model\Currency</find>
       <find>OperationManager</find>
       <find>does not exist</find>
+      <find>129530‬</find>
+      <find>129530</find>
     </findStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs</dir>
@@ -285,17 +241,24 @@
         <option value="$PROJECT_DIR$/Config/di.json" />
         <option value="$PROJECT_DIR$/Source/Parser/OperationParserInterface.php" />
         <option value="$PROJECT_DIR$/Source/Parser/OperationParser.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Source/Model/Money/MoneyInterface.php" />
         <option value="$PROJECT_DIR$/Source/Model/Money/Money.php" />
         <option value="$PROJECT_DIR$/Source/Model/Operation/OperationInterface.php" />
-        <option value="$PROJECT_DIR$/Source/Model/Operation/Operation.php" />
         <option value="$PROJECT_DIR$/Source/Parser/Calculator/MathInterface.php" />
         <option value="$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php" />
         <option value="$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php" />
         <option value="$PROJECT_DIR$/Config/currency.json" />
-        <option value="$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php" />
         <option value="$PROJECT_DIR$/Source/Parser/Calculator/Math.php" />
+        <option value="$PROJECT_DIR$/Tests/Service/MathTest.php" />
+        <option value="$PROJECT_DIR$/Source/Model/Operation/Operation.php" />
+        <option value="$PROJECT_DIR$/bootstrap.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/phpunit.xml" />
+        <option value="$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php" />
+        <option value="$PROJECT_DIR$/Tests/Parser/Calculator/OperationManagerTest.php" />
+        <option value="$PROJECT_DIR$/Tests/Parser/Calculator/CommissionCalculatorTest.php" />
+        <option value="$PROJECT_DIR$/Tests/Parser/Calculator/CurrencyConverterTest.php" />
+        <option value="$PROJECT_DIR$/Tests/Parser/Calculator/OperationParserTest.php" />
       </list>
     </option>
   </component>
@@ -384,31 +347,13 @@
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="Config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="Source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="Source" type="462c0819:PsiDirectoryNode" />
-              <item name="Exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="Source" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="Source" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Money" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -444,6 +389,24 @@
               <item name="Parser" type="462c0819:PsiDirectoryNode" />
               <item name="Output" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="Calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -453,18 +416,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="addDependency C:/xampp/htdocs" value="--no-progress --no-interaction --ansi --dev" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../htdocs_kernolab" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit 6+" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/autoload.php" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Tests\Parser\Calculator" />
+      <recent name="C:\xampp\htdocs\Tests" />
       <recent name="C:\xampp\htdocs\Source\Parser\Calculator" />
       <recent name="C:\xampp\htdocs\Source\Model\User" />
       <recent name="C:\xampp\htdocs\Source\Model\Operation" />
-      <recent name="C:\xampp\htdocs\Source\Model\Currency" />
-      <recent name="C:\xampp\htdocs\Source" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Source\Exception" />
@@ -482,7 +446,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
+    <configuration name="MathTest.testMultiply" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" singleton="false">
+      <TestRunner class="Paysera\CommissionTask\Tests\Service\MathTest" file="$PROJECT_DIR$/Tests/Parser/Calculator/MathTest.php" method="testMultiply" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -508,12 +476,44 @@
       <workItem from="1578392501567" duration="2544000" />
       <workItem from="1578463991439" duration="599000" />
       <workItem from="1579854587569" duration="3212000" />
-      <workItem from="1579936405877" duration="49650000" />
+      <workItem from="1579936405877" duration="64429000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="CurrencyConverterTest_testConvert - 2020.01.27 at 18h 10m 00s.xml">
+      <configuration name="CurrencyConverterTest.testConvert" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CurrencyConverterTest_testConvert - 2020.01.27 at 18h 10m 08s.xml">
+      <configuration name="CurrencyConverterTest.testConvert" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CurrencyConverterTest_testConvert - 2020.01.27 at 18h 13m 33s.xml">
+      <configuration name="CurrencyConverterTest.testConvert" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CurrencyConverterTest_testConvert - 2020.01.27 at 18h 13m 37s.xml">
+      <configuration name="CurrencyConverterTest.testConvert" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="OperationParserTest_testParseLine - 2020.01.27 at 18h 44m 45s.xml">
+      <configuration name="OperationParserTest.testParseLine" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="OperationParserTest_testGetInputHandle - 2020.01.27 at 18h 46m 15s.xml">
+      <configuration name="OperationParserTest.testGetInputHandle" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="OperationParserTest_testGetInputHandle - 2020.01.27 at 18h 47m 39s.xml">
+      <configuration name="OperationParserTest.testGetInputHandle" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="OperationParserTest_testGetInputHandleException - 2020.01.27 at 18h 48m 37s.xml">
+      <configuration name="OperationParserTest.testGetInputHandleException" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="OperationParserTest_testAddOperation - 2020.01.27 at 19h 24m 12s.xml">
+      <configuration name="OperationParserTest.testAddOperation" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="OperationParserTest_testAddOperation - 2020.01.27 at 19h 28m 32s.xml">
+      <configuration name="OperationParserTest.testAddOperation" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102917000" />
+    <option name="totallyTimeSpent" value="117696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -531,7 +531,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946696" weight="0.29035753" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -542,18 +542,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <condition expression="$targetCurrency === 'JPY'" language="PHP" />
-          <url>file://$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php</url>
-          <line>53</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -606,14 +594,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/Service/Math.php" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -693,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Model/User/UserInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/Parser/AbstractParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -747,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/MathInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -763,52 +729,6 @@
             <element signature="e#743#988#0#PHP" expanded="true" />
             <element signature="e#1575#1811#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Model/User/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#2419#2518#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="133" column="55" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
-          <folding>
-            <element signature="e#71#109#0#PHP" expanded="true" />
-            <element signature="e#213#276#0#PHP" expanded="true" />
-            <element signature="e#307#422#0#PHP" expanded="true" />
-            <element signature="e#559#810#0#PHP" expanded="true" />
-            <element signature="e#1979#2334#0#PHP" expanded="true" />
-            <element signature="e#2746#3061#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#71#115#0#PHP" expanded="true" />
-            <element signature="e#313#379#0#PHP" expanded="true" />
-            <element signature="e#423#486#0#PHP" expanded="true" />
-            <element signature="e#351#544#0#PHP" expanded="true" />
-            <element signature="e#912#1305#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Model/Operation/Operation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
@@ -822,27 +742,26 @@
     <entry file="file://$PROJECT_DIR$/Config/di.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Config/currency.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
+    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/Math.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="-629">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="34" />
           <folding>
-            <element signature="e#60#103#0#PHP" expanded="true" />
-            <element signature="e#248#603#0#PHP" expanded="true" />
-            <element signature="e#1139#1432#0#PHP" expanded="true" />
-            <element signature="e#2426#2549#0#PHP" expanded="true" />
-            <element signature="e#2928#3063#0#PHP" expanded="true" />
+            <element signature="e#269#336#0#PHP" expanded="true" />
+            <element signature="e#1396#1768#0#PHP" expanded="true" />
+            <element signature="e#1540#1810#0#PHP" expanded="true" />
+            <element signature="e#3446#3681#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -854,27 +773,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Model/User/UserInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="323">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Model/Operation/Operation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-355">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpunit.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/MathTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-321">
+          <caret line="44" column="28" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="44" selection-end-column="28" />
           <folding>
-            <element signature="e#71#114#0#PHP" expanded="true" />
-            <element signature="e#185#359#0#PHP" expanded="true" />
-            <element signature="e#1506#1750#0#PHP" expanded="true" />
+            <element signature="e#82#113#0#PHP" expanded="true" />
+            <element signature="e#1312#1535#0#PHP" expanded="true" />
+            <element signature="e#2636#2864#0#PHP" expanded="true" />
+            <element signature="e#3564#3740#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/Math.php">
+    <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/OperationManagerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="96" column="85" lean-forward="true" selection-start-line="96" selection-start-column="85" selection-end-line="96" selection-end-column="85" />
+        <state relative-caret-position="442">
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding>
-            <element signature="e#269#336#0#PHP" expanded="true" />
-            <element signature="e#1396#1768#0#PHP" expanded="true" />
-            <element signature="e#1540#1810#0#PHP" expanded="true" />
-            <element signature="e#3446#3681#0#PHP" expanded="true" />
+            <element signature="e#70#99#0#PHP" expanded="true" />
+            <element signature="e#1904#2006#0#PHP" expanded="true" />
+            <element signature="e#1975#2031#0#PHP" expanded="true" />
+            <element signature="e#3402#3515#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/CurrencyConverterTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="84" column="62" lean-forward="true" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+          <folding>
+            <element signature="e#70#99#0#PHP" expanded="true" />
+            <element signature="e#1817#2006#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/CommissionCalculatorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+          <folding>
+            <element signature="e#70#99#0#PHP" expanded="true" />
+            <element signature="e#2043#2108#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CurrencyConverter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#71#114#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/CommissionCalculator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#71#115#0#PHP" expanded="true" />
+            <element signature="e#313#379#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Model/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Parser/Calculator/OperationManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#71#109#0#PHP" expanded="true" />
+            <element signature="e#213#276#0#PHP" expanded="true" />
+            <element signature="e#307#422#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Parser/OperationParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="98" column="35" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="35" />
+          <folding>
+            <element signature="e#60#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Parser/Calculator/OperationParserTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+          <folding>
+            <element signature="e#70#113#0#PHP" expanded="true" />
+            <element signature="e#187#243#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

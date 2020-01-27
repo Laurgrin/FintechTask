@@ -22,22 +22,6 @@ class Operation implements OperationInterface
     protected $amount;
     
     /**
-     * @var MoneyInterface
-     */
-    protected $cashOutDiscount;
-    
-    /**
-     * Operation constructor.
-     *
-     * @param \Source\Model\Money\MoneyInterface $cashOutDiscount
-     */
-    public function __construct(MoneyInterface $cashOutDiscount)
-    {
-        $cashOutDiscount->setAmount('1000')->setCurrencyName('EUR');
-        $this->cashOutDiscount = $cashOutDiscount;
-    }
-    
-    /**
      * Get operation's date.
      *
      * @return string
